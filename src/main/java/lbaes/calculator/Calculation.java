@@ -4,20 +4,20 @@ package lbaes.calculator;
 import java.util.Locale;
 
 public class Calculation {
-    private double result;
-    private Operator operator;
-    private double operandA;
-    private double operandB;
+    private final double result;
+    private final Operator operator;
+    private final double operandA;
+    private final double operandB;
 
     private static double calculateResult(Double A, Operator operator, Double B) {
-        double result = switch (operator) {
+        return switch (operator) {
             case ADD -> A + B;
             case SUB -> A - B;
             case MUL -> A * B;
             case DIV -> A / B;
             default -> 0;
         };
-        return result;
+
     }
 
     public Calculation(double A, Operator operator, double B) {

@@ -1,9 +1,13 @@
 package lbaes.calculator;
 
 public enum Operator {
-    ADD,
-    SUB,
-    MUL,
-    DIV,
-    ERR
+
+    ADD("ADD"), SUB("SUB"), MUL("MUL"), DIV("DIV"), ERR("ERR");
+    private String strName;
+
+    private Operator(String strName) {
+        this.strName = strName;
+    }
+
+
 }

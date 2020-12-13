@@ -11,6 +11,7 @@ public class CalculatorController implements ErrorController {
     @GetMapping("/calculator")
     public Calculation calculationRequest(@RequestParam(value="A") Double A,@RequestParam(value = "op") String operator ,@RequestParam(value = "B") Double B) {
         Calculation calculation = new Calculation(A, operator, B);
+        System.out.println(String.format("%f %s %f = %f", calculation.getOperandA(), calculation.getOperator().toString(),calculation.getOperandB(), calculation.getResult()));
         return calculation;
     }
 
