@@ -10,21 +10,13 @@ public class Calculation {
     private double operandB;
 
     private static double calculateResult(Double A, Operator operator, Double B) {
-        double result = 0;
-        switch (operator) {
-            case ADD:
-                result = A + B;
-                break;
-            case SUB:
-                result = A - B;
-                break;
-            case MUL:
-                result = A * B;
-                break;
-            case DIV:
-                result = A / B;
-                break;
-        }
+        double result = switch (operator) {
+            case ADD -> A + B;
+            case SUB -> A - B;
+            case MUL -> A * B;
+            case DIV -> A / B;
+            default -> 0;
+        };
         return result;
     }
 
@@ -38,21 +30,12 @@ public class Calculation {
     public Calculation(double A, String operator, double B) {
         operandA = A;
         operandB = B;
-        switch (operator.toLowerCase(Locale.ROOT)){
-            case "add":
-                this.operator = Operator.ADD;
-                break;
-            case "sub":
-                this.operator = Operator.SUB;
-                break;
-            case "mul":
-                this.operator = Operator.MUL;
-                break;
-            case "div":
-                this.operator = Operator.DIV;
-                break;
-            default:
-                this.operator = Operator.ERR;
+        switch (operator.toLowerCase(Locale.ROOT)) {
+            case "add" -> this.operator = Operator.ADD;
+            case "sub" -> this.operator = Operator.SUB;
+            case "mul" -> this.operator = Operator.MUL;
+            case "div" -> this.operator = Operator.DIV;
+            default -> this.operator = Operator.ERR;
         }
         result = calculateResult(A, this.operator, B);
     }
