@@ -24,15 +24,10 @@ pipeline {
         }
 
         stage ('Deliver') {
-            agent {
-                docker {
-                    image 'docker'
-                }
-            }
             steps {
                 echo 'build and push image'
                 script {
-                    def siteImage = docker.build("lbaes/spring-rest-calculator:latest", "./")
+                    def siteImage = docker.build("lbaes/spring-rest-calculator:latest", "./src")
                     docker.withRegistry( '', registryCredential ) {
                         siteImage.push()
                     }
