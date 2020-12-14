@@ -27,7 +27,11 @@ pipeline {
         }
 
         stage ('Deliver') {
-            agent any
+            agent {
+                docker {
+                    image 'dind'
+                }
+            }
             steps {
                 echo 'build and push image'
                 script {
