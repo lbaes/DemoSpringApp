@@ -7,7 +7,7 @@ O Maven é usado para compilar o projeto.
 **2.Test**
 Maven é usado para executar os testes definidos no  arquivo CalculatorApplicationTests.java 
 **3.Deliver**    
-Construção e upload de uma imagem Docker para o Dockerhub.
+Construção e upload de uma imagem Docker para o Dockerhub. Imagem disponivel em https://hub.docker.com/r/lbaes/spring-rest-calculator
 
 
 ## Calculadora REST
