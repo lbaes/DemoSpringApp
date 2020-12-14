@@ -5,7 +5,7 @@ pipeline {
     agent {
         docker {
             image 'maven:3.6.3-openjdk-15'
-            args '--user root -v /root/.m2:/root/.m2 -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker'
+            args '--user root -v /root/.m2:/root/.m2 -v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
     stages {
