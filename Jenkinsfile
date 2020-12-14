@@ -27,7 +27,7 @@ pipeline {
         }
 
         stage ('Deliver') {
-            agent none
+            agent node
             steps {
                 echo 'build and push image'
                 script {
