@@ -1,4 +1,4 @@
-FROM openjdk:15-jre-slim-sid
+FROM openjdk:15
 RUN useradd -r calc -u 950
 USER calc
 
