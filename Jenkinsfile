@@ -3,6 +3,8 @@ pipeline {
         registryCredential = 'dockerHub'
     }
 
+    agent none
+
     stages {
         stage('Maven Build') {
             agent {
