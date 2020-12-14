@@ -8,6 +8,5 @@ COPY ./target/calculator-0.0.1-SNAPSHOT.jar calc.jar
 EXPOSE 8080
 EXPOSE 8081
 
-ENV JAVA_OPTS "-Xms128m -Xmx1536m"
 
-CMD ["java", "-Xms128m -Xmx1536m", "-jar", "/usr/src/app/calc.jar"]
+CMD ["java", "-jar", "/usr/src/app/calc.jar"]
