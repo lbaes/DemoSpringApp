@@ -3,7 +3,10 @@ pipeline {
         registryCredential = 'dockerHub'
     }
     agent {
-        dockerfile { true }
+        dockerfile { 
+                filename 'Dockerfile'
+                label 'maven-docker'
+         }
     }
     stages {
         stage('Maven Build') {
