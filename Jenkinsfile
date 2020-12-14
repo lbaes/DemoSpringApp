@@ -39,7 +39,7 @@ pipeline {
             steps {
                 echo 'build and push image'
                 script {
-                    def siteImage = docker.build("lbaes/spring-rest-calculator:latest", "./app/")
+                    def siteImage = docker.build("lbaes/spring-rest-calculator:latest", "./Docker/app/")
                     docker.withRegistry( '', registryCredential ) {
                         siteImage.push()
                     }
