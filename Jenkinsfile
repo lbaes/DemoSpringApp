@@ -5,7 +5,6 @@ pipeline {
     agent {
         dockerfile { 
                 filename 'Dockerfile'
-                label 'maven-docker'
          }
     }
     stages {
