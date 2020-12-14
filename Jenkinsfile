@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     environment {
         registryCredential = 'dockerHub'
     }
@@ -32,11 +32,6 @@ pipeline {
         }
 
         stage ('Deliver') {
-            agent {
-                docker {
-                    image 'docker:dind'
-                }
-            }
             steps {
                 echo 'build and push image'
                 script {
